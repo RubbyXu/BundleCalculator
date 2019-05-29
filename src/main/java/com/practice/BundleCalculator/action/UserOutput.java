@@ -9,7 +9,6 @@ import com.practice.BundleCalculator.utils.OrderItem;
 public class UserOutput {
 
 	public void generateOutput(List<OrderItem> orderList){
-		OrderItem orderItem = null;
 		Properties prop = new Properties();
 		InputStream input = null;
 		try {
@@ -18,8 +17,7 @@ public class UserOutput {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		for(int index = 0; index < orderList.size(); index++){
-			orderItem = (OrderItem) orderList.get(index);
+		for(OrderItem orderItem : orderList){
 			int itemNum = orderItem.getItemNum();
 			String itemFormat = orderItem.getItemFormat();
 			switch(itemFormat){
