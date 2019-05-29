@@ -19,24 +19,17 @@ public class UserInput {
 	}
 	
 	public List<OrderItem> readOrderByFile(File file){
-		BufferedReader reader = null;
-		try {
-			reader = new BufferedReader(new FileReader(file));
-			String str = null;
-			while((str = reader.readLine()) != null){
-				int itemNum = Integer.valueOf(str.split(" ")[0]);
-				String itemFormat = str.split(" ")[1];
+		String line;
+		try(BufferedReader br = new BufferedReader(new FileReader(file))){
+			while((line = br.readLine()) != null){
+				int itemNum = Integer.valueOf(line.split(" ")[0]);
+				String itemFormat = line.split(" ")[1];
 				orderList.add(new OrderItem(itemNum, itemFormat));
 			}
-		} catch (IOException e) {
+		} catch (IOException e){
 			e.printStackTrace();
-		} finally {
-			try {
-				reader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 		}
+		// br will be closed automatically
 		return orderList;
 	}
 }
