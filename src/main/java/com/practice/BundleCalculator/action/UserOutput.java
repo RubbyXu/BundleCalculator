@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
+
 import com.practice.BundleCalculator.utils.OrderItem;
+import com.practice.BundleCalculator.utils.SubmissionFormat;
 
 public class UserOutput {
 
-	public void generateOutput(List<OrderItem> orderList){
+	public void generateOutput(List<OrderItem> orderList, List<SubmissionFormat> submissionList){ 
 		Properties prop = new Properties();
 		InputStream input = null;
 		try {

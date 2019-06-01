@@ -3,32 +3,32 @@ package com.practice.BundleCalculator.utils;
 import java.util.*;
 
 public class SubmissionFormat {
-	private String formatCode;
-	private Map<Integer, Float> bundles = new HashMap<Integer, Float>();
+	private FormatCode formatCode;
+	private Map<Integer, Float> bundlesMap = new HashMap<Integer, Float>();
 	
-	public SubmissionFormat(String formatCode, Map<Integer, Float> bundles){
+	public SubmissionFormat(FormatCode formatCode, Map<Integer, Float> bundlesMap){
 		this.formatCode = formatCode;
-		this.bundles = bundles;
+		this.bundlesMap = bundlesMap;
 	}
 
 	@Override
 	public String toString() {
-		return "mediaFormat [formatCode=" + formatCode + ", bundles=" + bundles + "]";
+		return "mediaFormat [formatCode=" + formatCode + ", bundlesMap=" + bundlesMap + "]";
 	}
 
-	public String getFormatCode() {
+	public FormatCode getFormatCode() {
 		return formatCode;
 	}
 
-	public void setFormatCode(String formatCode) {
+	public void setFormatCode(FormatCode formatCode) {
 		this.formatCode = formatCode;
 	}
 
-	public Map<Integer, Float> getBundles() {
-		return bundles;
+	public Map<Integer, Float> getBundlesMap() {
+		return bundlesMap;
 	}
 
-	public void setBundles(Map<Integer, Float> bundles) {
-		this.bundles = bundles;
+	public void setBundlesMap(Map<Integer, Float> bundlesMap) {
+		this.bundlesMap = bundlesMap;
 	}	
 }
