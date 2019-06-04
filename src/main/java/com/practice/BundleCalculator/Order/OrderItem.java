@@ -1,4 +1,4 @@
-package com.practice.BundleCalculator.utils;
+package com.practice.BundleCalculator.Order;
 
 public class OrderItem {
 	private int itemNum;

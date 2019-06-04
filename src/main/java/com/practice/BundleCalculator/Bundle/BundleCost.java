@@ -1,18 +1,18 @@
-package com.practice.BundleCalculator.utils;
+package com.practice.BundleCalculator.Bundle;
 
 public class BundleCost {
 	
-	String mediaFormat;
+	//String mediaFormat;
 	int postNum;
 	float postCost;
 	
-	public BundleCost(String mediaFormat, int postNum, float postCost) {
+	public BundleCost(int postNum, float postCost) {
 		super();
-		this.mediaFormat = mediaFormat;
+		//this.mediaFormat = mediaFormat;
 		this.postNum = postNum;
 		this.postCost = postCost;
 	}
-
+	/*
 	public String getMediaFormat() {
 		return mediaFormat;
 	}
@@ -20,7 +20,7 @@ public class BundleCost {
 	public void setMediaFormat(String mediaFormat) {
 		this.mediaFormat = mediaFormat;
 	}
-
+    */
 	public int getPostNum() {
 		return postNum;
 	}

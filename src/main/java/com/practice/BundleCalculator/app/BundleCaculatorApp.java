@@ -1,22 +1,18 @@
 package com.practice.BundleCalculator.app;
 
-import java.io.File;
-import java.util.LinkedList;
 import java.util.List;
 
-import com.practice.BundleCalculator.action.UserInput;
-import com.practice.BundleCalculator.action.UserOutput;
-import com.practice.BundleCalculator.utils.FormatCode;
-import com.practice.BundleCalculator.utils.OrderItem;
-import com.practice.BundleCalculator.utils.SubmissionFormat;
+import com.practice.BundleCalculator.Bundle.SubmissionFormat;
+import com.practice.BundleCalculator.Input.UserInput;
+import com.practice.BundleCalculator.Order.OrderItem;
+import com.practice.BundleCalculator.Output.UserOutput;
 
 public class BundleCaculatorApp {
 	public static void main(String[] args){
-		UserInput input = new UserInput();
-		File orderFile = input.getFile("order.txt");
-		File submissionFile = input.getFile("submission.txt");
-		List<OrderItem> order = input.readOrderByFile(orderFile);
-		List<SubmissionFormat> submission = input.readSubmissionByFile(submissionFile);
+		UserInput input = new UserInput("order.txt");
+		List<OrderItem> order = input.readOrder();
+		input = new UserInput("submission.txt");
+		List<SubmissionFormat> submission = input.readSubmission();
 		UserOutput output = new UserOutput();
 		output.generateOutput(order, submission);
 	}

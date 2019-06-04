@@ -1,4 +1,4 @@
-package com.practice.BundleCalculator.action;
+package com.practice.BundleCalculator.Input;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,26 +9,34 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import com.practice.BundleCalculator.utils.FormatCode;
-import com.practice.BundleCalculator.utils.OrderItem;
-import com.practice.BundleCalculator.utils.SubmissionFormat;
+import com.practice.BundleCalculator.Bundle.FormatCode;
+import com.practice.BundleCalculator.Bundle.SubmissionFormat;
+import com.practice.BundleCalculator.Order.OrderItem;
 
 public class UserInput {
+	String fileName;
+	
 	private final static String SPACE = " ";
 	private final static String SEPARATOR = "\\|";
 	private final static String AT = "@ \\$";
 	private final static String INPUT_EXAMPLE = "10 IMG" + "/n" + "15 FLAC" + "/n" + "13 VID";
 	
+	File file = null;
 	List<OrderItem> orderList = new LinkedList<OrderItem>();
 	List<SubmissionFormat> submissionList = new LinkedList<SubmissionFormat>();
 	
-	public File getFile(String fileName){
-		ClassLoader classLoader = getClass().getClassLoader();
-		File file = new File(classLoader.getResource(fileName).getFile());
-		return file; 
-	}
+//	public File getFile(String fileName){
+//		ClassLoader classLoader = getClass().getClassLoader();
+//		File file = new File(classLoader.getResource(fileName).getFile());
+//		return file; 
+//	}
 	
-	public List<OrderItem> readOrderByFile(File file){
+	public UserInput(String fileName) {
+		ClassLoader classLoader = getClass().getClassLoader();
+		file = new File(classLoader.getResource(fileName).getFile());
+	}
+
+	public List<OrderItem> readOrder(){
 		String line;
 		try(BufferedReader br = new BufferedReader(new FileReader(file))){
 			while((line = br.readLine()) != null){
@@ -47,7 +55,7 @@ public class UserInput {
 		return orderList;
 	}
 	
-	public List<SubmissionFormat> readSubmissionByFile(File file){
+	public List<SubmissionFormat> readSubmission(){
 		String line;
 		Map<Integer, Float> bundlesMap = new HashMap<Integer, Float>();
 		

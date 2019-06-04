@@ -1,4 +1,4 @@
-package com.practice.BundleCalculator.utils;
+package com.practice.BundleCalculator.Bundle;
 
 public enum FormatCode {
 	IMG, Flac, VID;

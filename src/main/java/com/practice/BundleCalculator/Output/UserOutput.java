@@ -1,12 +1,12 @@
-package com.practice.BundleCalculator.action;
+package com.practice.BundleCalculator.Output;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 
-import com.practice.BundleCalculator.utils.OrderItem;
-import com.practice.BundleCalculator.utils.SubmissionFormat;
+import com.practice.BundleCalculator.Bundle.SubmissionFormat;
+import com.practice.BundleCalculator.Order.OrderItem;
 
 public class UserOutput {
 
